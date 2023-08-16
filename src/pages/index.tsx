@@ -1,5 +1,6 @@
 import { useCurrentUser } from "@/hooks/useCurrentUser";
 import { firebaseSignOut, signInWithGoogle } from "@/lib/firebase";
+import { Button } from "@chakra-ui/react";
 
 export default function Home() {
   const { user } = useCurrentUser();
@@ -8,10 +9,10 @@ export default function Home() {
       {user ? (
         <div>
           <h1>Hi {user.displayName}</h1>
-          <button onClick={firebaseSignOut}>sign out</button>
+          <Button onClick={firebaseSignOut}>sign out</Button>
         </div>
       ) : (
-        <button onClick={signInWithGoogle}>Login</button>
+        <Button onClick={signInWithGoogle}>Login</Button>
       )}
     </>
   );
