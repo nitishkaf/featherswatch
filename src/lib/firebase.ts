@@ -1,4 +1,4 @@
-import { initializeApp } from "firebase/app";
+import { getApp, initializeApp } from "firebase/app";
 import {
   GoogleAuthProvider,
   getAuth,
@@ -10,6 +10,15 @@ import {
   UserCredential,
 } from "firebase/auth";
 import { rootUrl } from "@/utils/routes";
+import {
+  getFirestore,
+  query,
+  collection,
+  where,
+  getDocs,
+  limit,
+} from "firebase/firestore";
+import { getStorage } from "firebase/storage";
 
 const firebaseConfig = {
   apiKey: process.env.API_KEY,
@@ -22,8 +31,18 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase)
-const app = initializeApp(firebaseConfig);
+function createFirebaseApp(config: any) {
+  try {
+    return getApp();
+  } catch {
+    return initializeApp(config);
+  }
+}
+const app = createFirebaseApp(firebaseConfig);
 export const auth = getAuth(app);
+export const firestore = getFirestore(app);
+export const storage = getStorage(app);
+export const STATE_CHANGED = "state_changed";
 
 export async function firebaseSignOut() {
   await signOut(auth);
@@ -79,4 +98,23 @@ async function loginHandler(promise: Promise<UserCredential>) {
   }
   //@ts-ignore
   return { res, serverError };
+}
+
+export async function getUserWithUsername(username: any) {
+  const q = query(
+    collection(firestore, "users"),
+    where("username", "==", username),
+    limit(1)
+  );
+  const userDoc = (await getDocs(q)).docs[0];
+  return userDoc;
+}
+
+export function postToJSON(doc: any) {
+  const data = doc.data();
+  return {
+    ...data,
+    createdAt: data.createdAt.toMillis(),
+    updatedAt: data.updatedAt.toMillis(),
+  };
 }
