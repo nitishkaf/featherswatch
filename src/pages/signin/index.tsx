@@ -1,7 +1,8 @@
 import SignInForm from "@/components/SignIn/SignInForm";
 import SignInLayout from "@/components/SignIn/SignInLayout";
 import SignInWithGoogle from "@/components/SignIn/SignInWithGoogle";
-import { Divider, Flex } from "@chakra-ui/react";
+import { Center, Divider, Flex, Text } from "@chakra-ui/react";
+import Link from "next/link";
 
 const SignIn = () => {
   return (
@@ -10,6 +11,20 @@ const SignIn = () => {
         <SignInWithGoogle />
         <Divider />
         <SignInForm />
+        <Center>
+          <Text my={8} fontSize={"12px"} color="gray.500">
+            Don't have an account?{" "}
+            <Link
+              href="/signup"
+              style={{
+                textDecoration: "underline",
+                color: "white",
+              }}
+            >
+              Sign Up Now
+            </Link>
+          </Text>
+        </Center>
       </Flex>
     </SignInLayout>
   );
