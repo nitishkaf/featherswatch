@@ -1,26 +1,38 @@
-import { UserContext } from "@/lib/context";
-import { firebaseSignOut, signInWithGoogle } from "@/lib/firebase";
-import { Button } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  Container,
+  Flex,
+  Heading,
+  VStack,
+} from "@chakra-ui/react";
+import Image from "next/image";
 import { useRouter } from "next/router";
-import { useContext } from "react";
+import Osprey from "../../public/osprey.jpg";
 
 export default function Home() {
-  const { user, username } = useContext(UserContext);
   const router = useRouter();
-  console.log("username", user);
   return (
-    <>
-      <Button onClick={() => router.push("/signin")}>Sign In Page</Button>
-      <Button onClick={() => router.push("/signup")}>Sign Up Page</Button>
-
-      {user ? (
-        <div>
-          <h1>Hi </h1>
-          <Button onClick={firebaseSignOut}>sign out</Button>
-        </div>
-      ) : (
-        <Button onClick={signInWithGoogle}>Login</Button>
-      )}
-    </>
+    <Container maxW="100%">
+      <VStack mt={150}>
+        <Box w="300px">
+          <Image
+            src={Osprey}
+            alt="osprey"
+            style={{
+              borderRadius: "50%",
+            }}
+          />
+        </Box>
+        <Heading
+          fontSize="64px"
+          color="#AEC3B0"
+          fontFamily={"Wix Madefor Display"}
+        >
+          Discover Feathers Watch
+        </Heading>
+        <Button onClick={() => router.push("/signin")}>Explore App</Button>
+      </VStack>
+    </Container>
   );
 }
