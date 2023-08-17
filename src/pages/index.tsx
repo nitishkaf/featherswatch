@@ -14,7 +14,7 @@ export default function Home() {
   const router = useRouter();
   return (
     <Container maxW="100%">
-      <VStack mt={150}>
+      <VStack mt={100}>
         <Box w="300px">
           <Image
             src={Osprey}
@@ -31,7 +31,12 @@ export default function Home() {
         >
           Discover Feathers Watch
         </Heading>
-        <Button onClick={() => router.push("/signin")}>Explore App</Button>
+        <Button
+          w={{ base: "100%", md: "300px" }}
+          onClick={() => router.push("/signin")}
+        >
+          Explore App
+        </Button>
       </VStack>
     </Container>
   );
