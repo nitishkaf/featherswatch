@@ -13,6 +13,7 @@ const SignInLayout = ({ heading, subheading, children }: SignInLayoutProps) => {
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
+        justifyContent: "center",
         flex: 1,
         flexShrink: 0,
         paddingLeft: 5,
@@ -20,13 +21,14 @@ const SignInLayout = ({ heading, subheading, children }: SignInLayoutProps) => {
         paddingTop: 16,
         paddingBottom: 8,
         boxShadow: "lg",
+        margin: 150,
       }}
     >
       <Flex
         flex={1}
         direction="column"
         justify={"center"}
-        w={{ base: "384px", md: "330px" }}
+        w={{ base: "300px", md: "330px" }}
       >
         <Box mb={10}>
           <Heading as="h1" size="xl" mb={6}>
