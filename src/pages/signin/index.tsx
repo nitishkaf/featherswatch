@@ -13,7 +13,7 @@ const SignIn = () => {
         <SignInForm />
         <Center>
           <Text my={8} fontSize={"12px"} color="gray.500">
-            Don't have an account?{" "}
+            Don&apos;t have an account?{" "}
             <Link
               href="/signup"
               style={{
