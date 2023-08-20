@@ -19,9 +19,9 @@ const observations = [
 const Observations2 = () => {
   return (
     <VStack>
-      {observations.map((e) => {
+      {observations.map((e, index) => {
         return (
-          <Box>
+          <Box key={index}>
             <Text as="b">{e.title}</Text>
             <Counter type={e.type} />
           </Box>
