@@ -1,34 +1,40 @@
 import {
-    Button,
-    HStack,
-    Input,
-    useNumberInput
-  } from '@chakra-ui/react'
+  Button,
+  Input,
+  InputGroup,
+  InputLeftElement,
+  InputRightElement,
+  useNumberInput,
+} from "@chakra-ui/react";
 
 type CounterProps = {
-    type: string;
+  type: string;
 };
 
 function Counter({ type }: CounterProps) {
-    const { getInputProps, getIncrementButtonProps, getDecrementButtonProps } =
-        useNumberInput({
-            step: 1,
-            defaultValue: 0,
-            min: 0,
-            max: 10
-        })
-  
-    const inc = getIncrementButtonProps()
-    const dec = getDecrementButtonProps()
-    const input = getInputProps()
-  
-    return (
-      <HStack maxW='100px'>
+  const { getInputProps, getIncrementButtonProps, getDecrementButtonProps } =
+    useNumberInput({
+      step: 1,
+      defaultValue: 0,
+      min: 0,
+      max: 10,
+    });
+
+  const inc = getIncrementButtonProps();
+  const dec = getDecrementButtonProps();
+  const input = getInputProps();
+
+  return (
+    <InputGroup>
+      <InputLeftElement>
         <Button {...inc}>+</Button>
-        <Input {...input} />
+      </InputLeftElement>
+      <Input {...input} />
+      <InputRightElement>
         <Button {...dec}>-</Button>
-      </HStack>
-    );
+      </InputRightElement>
+    </InputGroup>
+  );
 }
 
 export default Counter;
