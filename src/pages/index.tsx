@@ -29,7 +29,7 @@ export default function Home() {
           color="#AEC3B0"
           fontFamily={"Wix Madefor Display"}
         >
-          Discover Feathers Watch
+          Discover FeatherWatch
         </Heading>
         <Button
           w={{ base: "100%", md: "300px" }}
