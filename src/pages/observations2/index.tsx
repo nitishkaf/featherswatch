@@ -1,29 +1,34 @@
 import Counter from "@/components/Counter/Counter";
-import { Box, Text, VStack } from '@chakra-ui/react'
+import { Box, Text, VStack } from "@chakra-ui/react";
+
+const observations = [
+  {
+    title: "Number of Adults",
+    type: "adults",
+  },
+  {
+    title: "Number of Nestlings",
+    type: "nestlings",
+  },
+  {
+    title: "Number of Fledglings",
+    type: "fledglings",
+  },
+];
 
 const Observations2 = () => {
-    return(
-        <VStack>
-            <Box>
-                <Text as='b'>
-                    Number of Adults 
-                </Text>
-                <Counter type="adults"></Counter>
-            </Box>
-            <Box>
-                <Text as='b'>
-                    Number of Nestlings 
-                </Text>
-                <Counter type="nestlings"></Counter>
-            </Box>
-            <Box>
-                <Text as='b'>
-                    Number of Fledglings 
-                </Text>
-                <Counter type="fledglings"></Counter>
-            </Box>
-        </VStack>        
-    );
+  return (
+    <VStack>
+      {observations.map((e) => {
+        return (
+          <Box>
+            <Text as="b">{e.title}</Text>
+            <Counter type={e.type} />
+          </Box>
+        );
+      })}
+    </VStack>
+  );
 };
 
 export default Observations2;
