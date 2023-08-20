@@ -5,14 +5,18 @@ import {
     useNumberInput
   } from '@chakra-ui/react'
 
-  function HookUsage() {
+type CounterProps = {
+    type: string;
+};
+
+function Counter({ type }: CounterProps) {
     const { getInputProps, getIncrementButtonProps, getDecrementButtonProps } =
-      useNumberInput({
-        step: 1,
-        defaultValue: 0,
-        min: 0,
-        max: 10
-      })
+        useNumberInput({
+            step: 1,
+            defaultValue: 0,
+            min: 0,
+            max: 10
+        })
   
     const inc = getIncrementButtonProps()
     const dec = getDecrementButtonProps()
@@ -24,5 +28,7 @@ import {
         <Input {...input} />
         <Button {...dec}>-</Button>
       </HStack>
-    )
-  }
+    );
+}
+
+export default Counter;
