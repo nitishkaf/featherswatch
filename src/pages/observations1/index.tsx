@@ -5,7 +5,7 @@ const behaviors = [
     {
       behaviorName: "Breeding Activity: Courtship",
       behaviorDescription: "This behavior involves two adult ospreys flying in circles around each other.",
-      youtubeEmbed: '',
+      youtubeEmbed: '<div><iframe width="560" height="315" src="https://www.youtube.com/embed/Dm_y2t8Welc?si=IPhhM-tDLq7PfY_H" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>',
     },
     {
       behaviorName: "Breeding Activity: Copulation",
