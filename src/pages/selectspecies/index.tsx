@@ -64,7 +64,7 @@ const SelectSpecies = () => {
             <Flex 
               key={index}
               align="top"
-              direction="column"
+              direction="row"
               justify="center"
             >
               <Species
@@ -83,4 +83,3 @@ const SelectSpecies = () => {
   };
 
   export default SelectSpecies;
-  

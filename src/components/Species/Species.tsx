@@ -26,15 +26,14 @@ function Species({
         hidden 
         id={ speciesID }
         disabled={ speciesDisabled }
+        value={ speciesID }
       />
         <Box
           {...getRadioProps()}
-          display='flex' 
-          alignItems='top'
           borderColor={ state.isChecked ? '#FFBA68' : 'transparent' }
           borderWidth={ state.isChecked ? '3px' : '0' }
           fontWeight={ state.isChecked ? 'bold' : 'normal' }
-          w={50}
+          w={150}
           p={5}
           rounded='8px'
           _focus={{
