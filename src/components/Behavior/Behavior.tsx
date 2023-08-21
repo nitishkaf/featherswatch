@@ -3,7 +3,7 @@ import { Checkbox, Flex, Text } from '@chakra-ui/react'
 type BehaviorProps = {
   behaviorName: string;
   behaviorDescription: string;
-  youtubeEmbed: string;
+  youtubeEmbed: any[];
 };
 
 const Behavior = ({ behaviorName, behaviorDescription, youtubeEmbed }:BehaviorProps) => {
