@@ -1,4 +1,4 @@
-import { Flex, RadioGroup, useRadioGroup } from "@chakra-ui/react";
+import { Flex, HStack, RadioGroup, useRadioGroup } from "@chakra-ui/react";
 import Species from "@/components/Species/Species";
 import { useState } from 'react';
 
@@ -55,9 +55,7 @@ const SelectSpecies = () => {
   })
 
   return (
-    <Flex 
-      direction="row"
-    >
+    <HStack>
       <RadioGroup>
         {speciesList.map((e, index) => {
           return (
@@ -78,7 +76,7 @@ const SelectSpecies = () => {
            );
         })}
       </RadioGroup>
-    </Flex>
+    </HStack>
     );
   };
 
