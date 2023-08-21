@@ -64,9 +64,9 @@ const Observations1 = () => {
   return (
     <VStack>
       <CheckboxGroup>
-        {behaviors.map((e) => {
+        {behaviors.map((e, index) => {
           return (
-            <Flex key={e.id}>
+            <Flex key={index}>
               <Behavior
                 behaviorName={e.behaviorName}
                 behaviorDescription={e.behaviorDescription}
