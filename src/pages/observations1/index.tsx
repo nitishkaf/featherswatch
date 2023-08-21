@@ -1,3 +1,5 @@
+/* eslint-disable react/jsx-key */
+
 import { CheckboxGroup, Flex, VStack } from "@chakra-ui/react";
 import Behavior from "@/components/Behavior/Behavior";
 
@@ -70,7 +72,7 @@ const Observations1 = () => {
               <Behavior
                 behaviorName={e.behaviorName}
                 behaviorDescription={e.behaviorDescription}
-                youtubeEmbed={...e.youtubeEmbed}
+                youtubeEmbed={e.youtubeEmbed}
               />
             </Flex>
           );
