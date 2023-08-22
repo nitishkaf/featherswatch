@@ -15,30 +15,6 @@ const speciesList = [
     speciesImage: "",
     speciesDisabled: false,
   },
-  {
-    id: "responsibility1",
-    speciesName: "Responsibility Bird 1",
-    speciesImage: "",
-    speciesDisabled: true,
-  },
-  {
-    id: "responsibility2",
-    speciesName: "Responsibility Bird 2",
-    speciesImage: "",
-    speciesDisabled: true,
-  },
-  {
-    id: "responsibility3",
-    speciesName: "Responsibility Bird 3",
-    speciesImage: "",
-    speciesDisabled: true,
-  },
-  {
-    id: "responsibility4",
-    speciesName: "Responsibility Bird 4",
-    speciesImage: "",
-    speciesDisabled: true,
-  },
 ]; 
 
 const SelectSpecies = () => {
