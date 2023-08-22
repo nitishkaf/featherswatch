@@ -1,4 +1,4 @@
-import { Flex, HStack, RadioGroup, useRadioGroup } from "@chakra-ui/react";
+import { Flex, HStack, RadioGroup, Stack, Text, useRadioGroup } from "@chakra-ui/react";
 import Species from "@/components/Species/Species";
 import { useState } from 'react';
 
@@ -18,41 +18,42 @@ const speciesList = [
 ]; 
 
 const SelectSpecies = () => {
-  const [ species, setSpecies ] = useState('Osprey');
-
   const handleCheck = (value: string) => {
-    setSpecies(value);
-    console.log(value)
-  }
+    console.log(value);
+  };
   
-  const { value, getRadioProps, getRootProps } = useRadioGroup({
-    defaultValue: 'Osprey',
+  const { value, getRootProps, getRadioProps, setValue } = useRadioGroup({
     onChange: handleCheck,
+    // value: 
   })
 
   return (
-    <HStack>
-      <RadioGroup>
-        {speciesList.map((e, index) => {
-          return (
-            <Flex 
-              key={index}
-              align="top"
-              direction="row"
-              justify="center"
-            >
-              <Species
-                speciesName={ e.speciesName }
-                speciesImage={ e.speciesImage }
-                speciesDisabled={ e.speciesDisabled }
-                speciesID={ e.id }
-                {...getRadioProps({ value: e.speciesName })}
-              />
-            </Flex>
-           );
-        })}
-      </RadioGroup>
-    </HStack>
+        <Stack {...getRootProps()}>
+          <Text>
+              The selected species is { value }
+          </Text>
+          <HStack>
+            {speciesList.map((e, index) => {
+                // const radio = getRadioProps({ value: e.id })
+                return (
+                <Flex 
+                    key={index}
+                    align="top"
+                    direction="row"
+                    justify="center"
+                >
+                <Species
+                    speciesName={ e.speciesName }
+                    speciesImage={ e.speciesImage }
+                    speciesDisabled={ e.speciesDisabled }
+                    speciesID={ e.id }
+                    {...getRadioProps({ value: e.id })}
+                />
+                </Flex>
+                );
+            })}
+          </HStack>  
+        </Stack>
     );
   };
 

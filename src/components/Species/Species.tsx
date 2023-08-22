@@ -12,26 +12,23 @@ function Species({
   speciesImage,
   speciesDisabled,
   speciesID,
-}: SpeciesSelectProps) {
+}: SpeciesSelectProps, radioProps: any) {
 
-  const SpeciesRadio = (props: any) => {
-    const { ...radioProps } = props;
     const { state, getInputProps, getRadioProps, htmlProps, getLabelProps } = 
       useRadio(radioProps);
 
     return (
       <chakra.label { ...htmlProps } cursor='pointer'>
       <input 
-        { ...getInputProps({}) } 
+        { ...getInputProps({}) }
         hidden 
-        id={ speciesID }
-        disabled={ speciesDisabled }
-        value={ speciesID }
-        type="radio"
+        // id={ speciesID }
+        // value={ speciesID }
+        // type="radio"
       />
         <Box
           { ...getRadioProps() }
-          w={150}
+          w={130}
           p={5}
           rounded='8px'
           _focus={{
@@ -50,11 +47,6 @@ function Species({
         </Box>
       </chakra.label>
     )
-  };
-
-  return (
-      <SpeciesRadio /> 
-  );
 }
 
 export default Species;
