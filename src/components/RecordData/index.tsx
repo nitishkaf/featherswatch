@@ -15,7 +15,9 @@ const RecordData = () => {
 
   return (
     <>
-      <Button onClick={onOpen}>Record Data</Button>
+      <Button w="100%" onClick={onOpen}>
+        Record Data
+      </Button>
       <Modal
         isOpen={isOpen}
         onClose={onClose}
