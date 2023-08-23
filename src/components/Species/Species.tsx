@@ -5,6 +5,7 @@ type SpeciesSelectProps = {
   speciesImage: string;
   speciesDisabled: boolean;
   speciesID: string;
+  isSelected: boolean;
 };
 
 function Species({
@@ -12,6 +13,7 @@ function Species({
   speciesImage,
   speciesDisabled,
   speciesID,
+  isSelected,
 }: SpeciesSelectProps, radioProps: any) {
 
     const { state, getInputProps, getRadioProps, htmlProps, getLabelProps } = 
@@ -22,9 +24,10 @@ function Species({
       <input 
         { ...getInputProps({}) }
         hidden 
-        // id={ speciesID }
-        // value={ speciesID }
-        // type="radio"
+        id={ speciesID }
+        value={ speciesID }
+        type="radio"
+        checked={ isSelected }
       />
         <Box
           { ...getRadioProps() }

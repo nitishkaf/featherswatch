@@ -18,23 +18,28 @@ const speciesList = [
 ]; 
 
 const SelectSpecies = () => {
-  const handleCheck = (value: string) => {
-    console.log(value);
-  };
+  const [selectedSpecies, setSelectedSpecies] =
+    useState('');
   
+  const handleCheck = (value: string) => {
+    setSelectedSpecies(value);
+    console.log(selectedSpecies);
+  }
+
   const { value, getRootProps, getRadioProps, setValue } = useRadioGroup({
+    defaultValue: selectedSpecies,
     onChange: handleCheck,
-    // value: 
   })
 
   return (
-        <Stack {...getRootProps()}>
-          <Text>
-              The selected species is { value }
-          </Text>
-          <HStack>
+        <HStack {...getRootProps()}>
+          <Text>The selected species is { selectedSpecies }</Text>
+          <RadioGroup
+            onChange={(e) => setSelectedSpecies(e)}
+            value={selectedSpecies}
+          >
             {speciesList.map((e, index) => {
-                // const radio = getRadioProps({ value: e.id })
+              const isSelected = selectedSpecies === e.id;
                 return (
                 <Flex 
                     key={index}
@@ -42,18 +47,18 @@ const SelectSpecies = () => {
                     direction="row"
                     justify="center"
                 >
-                <Species
+                  <Species
                     speciesName={ e.speciesName }
                     speciesImage={ e.speciesImage }
                     speciesDisabled={ e.speciesDisabled }
                     speciesID={ e.id }
-                    {...getRadioProps({ value: e.id })}
-                />
+                    isSelected={ isSelected }
+                  />
                 </Flex>
                 );
             })}
-          </HStack>  
-        </Stack>
+          </RadioGroup>  
+        </HStack>
     );
   };
 
