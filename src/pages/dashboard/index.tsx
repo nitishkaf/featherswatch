@@ -2,7 +2,7 @@ import { useRouter } from "next/router";
 import { useContext, useEffect } from "react";
 import SignOut from "@/components/SignIn/SignOut";
 import { UserContext } from "@/lib/context";
-import { Container } from "@chakra-ui/react";
+import { Container, Flex } from "@chakra-ui/react";
 import RecordData from "@/components/RecordData";
 
 const Dashboard = () => {
@@ -15,8 +15,16 @@ const Dashboard = () => {
   }, [userData.user]);
   return (
     <Container>
-      <SignOut />
-      <RecordData />
+      <Flex
+        direction="column"
+        justifyContent="center"
+        alignItems="center"
+        gap={10}
+        minH="100vh"
+      >
+        <RecordData />
+        <SignOut />
+      </Flex>
     </Container>
   );
 };
