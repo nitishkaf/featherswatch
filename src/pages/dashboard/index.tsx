@@ -3,6 +3,7 @@ import { useContext, useEffect } from "react";
 import SignOut from "@/components/SignIn/SignOut";
 import { UserContext } from "@/lib/context";
 import { Container } from "@chakra-ui/react";
+import RecordData from "@/components/RecordData";
 
 const Dashboard = () => {
   const userData = useContext(UserContext);
@@ -15,6 +16,7 @@ const Dashboard = () => {
   return (
     <Container>
       <SignOut />
+      <RecordData />
     </Container>
   );
 };
