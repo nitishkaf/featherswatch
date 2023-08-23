@@ -62,8 +62,17 @@ const RecordData = () => {
               >
                 Back
               </Button>
-              <Button w="100%" onClick={handleForward}>
-                Next
+              <Button
+                w="100%"
+                onClick={() => {
+                  if (formStep == 9) {
+                    onClose();
+                  } else {
+                    handleForward();
+                  }
+                }}
+              >
+                {formStep == 9 ? "Submit" : "Next"}
               </Button>
             </Flex>
           </ModalFooter>
