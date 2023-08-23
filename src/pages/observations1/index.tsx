@@ -12,9 +12,8 @@ const behaviors = [
       <iframe
         width="560"
         height="315"
-        src="https://www.youtube.com/embed/fFaARTm7JwU?si=094JhBsvOZ8tdgCm"
-        title="YouTube video player"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        src="https://www.youtube.com/embed/ukVLwegly3g?si=Xme7zaThiamlGsUi"
+        title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
       ></iframe>,
     ],
     id: "courtship",
