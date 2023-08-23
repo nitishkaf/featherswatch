@@ -12,7 +12,7 @@ const behaviors = [
       <iframe
         width="560"
         height="315"
-        src="https://www.youtube.com/embed/Dm_y2t8Welc?si=IPhhM-tDLq7PfY_H"
+        src="https://www.youtube.com/embed/fFaARTm7JwU?si=094JhBsvOZ8tdgCm"
         title="YouTube video player"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
       ></iframe>,
@@ -23,40 +23,80 @@ const behaviors = [
     behaviorName: "Breeding Activity: Copulation",
     behaviorDescription:
       "This behavior involves two adult ospreys mating with each other, with the male on top of the female.",
-    youtubeEmbed: [],
+    youtubeEmbed: [
+      <iframe
+        width="365"
+        height="648"
+        src="https://www.youtube.com/embed/3U-F8YVNtVU"
+        title="Osprey copulation"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      ></iframe>,
+    ],
     id: "copulation",
   },
   {
     behaviorName: "Breeding Activity: Nest Building",
     behaviorDescription:
       "This behavior can be recognized by when the male brings various plant material to the nest location to build the nest.",
-    youtubeEmbed: [],
+    youtubeEmbed: [
+      <iframe
+        width="560"
+        height="315"
+        src="https://www.youtube.com/embed/fFaARTm7JwU?si=drbD0Et1bYweclfg"
+        title="YouTube video player"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      ></iframe>,
+    ],
     id: "nestBuilding",
   },
   {
     behaviorName: "Breeding Activity: Incubation",
     behaviorDescription:
       "This behavior can be recognized by when the female is sitting in a particular manner, indicating that she is sitting on eggs.",
-    youtubeEmbed: [],
+    youtubeEmbed: [
+      <iframe
+        width="560"
+        height="315"
+        src="https://www.youtube.com/embed/fjKBgBSr50I?si=MVOrdaQO0EPoUWZ3"
+        title="YouTube video player"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      ></iframe>,
+    ],
     id: "incubation",
   },
   {
     behaviorName: "Breeding Activity: Male Bringing Food to Female",
     behaviorDescription:
       "This behavior can be recognized by when the male brings fish to the female for her to consume.",
-    youtubeEmbed: [],
+    youtubeEmbed: [
+      <iframe
+        width="560"
+        height="315"
+        src="https://www.youtube.com/embed/RJPWuSug1uM?si=1VFiKMpIhiptD8TY"
+        title="YouTube video player"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      ></iframe>,
+    ],
     id: "foodBringing",
   },
   {
     behaviorName: "Breeding Activity: Adult Feeding Young",
     behaviorDescription:
       "This behavior can be recognized by when the female regurgitates the fish she has eaten into the mouths of her offspring.",
-    youtubeEmbed: [],
+    youtubeEmbed: [
+      <iframe
+        width="365"
+        height="648"
+        src="https://www.youtube.com/embed/-mY3XRXGgQM"
+        title="Osprey Dad Brings in Fish: Mom Gets Busy Feeding Babies!"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      ></iframe>,
+    ],
     id: "feeding",
   },
   {
     behaviorName: "Other Behaviors (Please describe later)",
-    behaviorDescription: "Please describe the behaviors you observed when you ",
+    behaviorDescription: "Please describe the behaviors you observed on the page for notes. Selecting this means there were behaviors observed that were not listed above.",
     youtubeEmbed: [],
     id: "other",
   },
